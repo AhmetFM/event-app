@@ -1,9 +1,10 @@
+import { Redirect } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function Index() {
-  return (
-    <View className="flex-1 items-center justify-center">
-      <Text>First init</Text>
-    </View>
-  );
+  const isSignedIn = true;
+
+  if (isSignedIn) return <Redirect href="/(root)/(tabs)/home" />;
+
+  return <Redirect href="/(auth)/welcome" />;
 }
